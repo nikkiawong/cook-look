@@ -8,3 +8,30 @@ $ npm install uuid@3.1.0 --save
 
 For thunks:
 $ npm install redux-thunk@2.2.0 --save
+
+
+
+
+Searchbar _____
+
+1 ---- 10
+
+
+DISPLAYED RECIPE
+
+
+
+Store:
+  currentSearchRecipes:
+  currentRecipe:
+
+
+State tree??????
+
+myRecipesById: {
+
+},
+currentSearchRecipes: {
+
+},
+selec: 0
