@@ -1,7 +1,8 @@
 export const initialState = {
   currentSearchRecipeList: {
     1: {
-      food: 'chicken'
+      food: 'chicken',
+      isFetching: false
     }
-  }
+  },
 };

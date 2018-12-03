@@ -35,3 +35,9 @@ currentSearchRecipes: {
 
 },
 selec: 0
+
+
+
+
+FETCHRECIPE --> SEARCH_RECIPE --> true
+            --> FETCH API
