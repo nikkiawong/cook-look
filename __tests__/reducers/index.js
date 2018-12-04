@@ -14,8 +14,11 @@ describe('Cook Look', () => {
     });
 
     it('Should update state when API is being requested.', () => {
-      const action = actions.fetchRecipeList('chicken')
-      expect(searchRecipeReducer(initialState.currentSearchRecipeList[1].isFetching, action)).toEqual(true);
+      const action = actions.searchRecipe('chicken');
+      const newStateEntry = {
+        isFetching: true
+      };
+      expect(searchRecipeReducer(initialState.currentSearchRecipeList[1].isFetching, action)).toEqual(newStateEntry);
     });
   });
 

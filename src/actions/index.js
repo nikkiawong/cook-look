@@ -14,7 +14,10 @@ export function fetchRecipeList(userInput) {
       response => response.json(),
       error => console.log('An error occurred.', error)
     ).then(function(json) {
-      console.log(json);
+      // let newRecipes = [];
+      // Object.keys(json.hits)
+      // console.log(json);
+      console.log(json.hits[0].recipe.label);
     });
   };
 }
