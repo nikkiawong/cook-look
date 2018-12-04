@@ -1,3 +1,5 @@
+START AT actions/index.js: can we iterate 10 times over object? Currently just recording last object in RecipeObject2.
+
 Add from weekend:
 
 For async:
