@@ -6,7 +6,13 @@ const RecipeList = ({ newRecipes }) => {
   return (
     <div>
       {newRecipes.map((recipe) =>
-        <li key={recipe.key}>{recipe.name}</li>
+        <li key={recipe.key}>{recipe.name}
+          <ul>
+            <li><img src={recipe.image}></img></li>
+            <li>{recipe.ingredients}</li>
+            <li>{recipe.url}</li>
+          </ul>
+        </li>
       )}
     </div>
   );

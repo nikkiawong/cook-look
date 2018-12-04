@@ -21,6 +21,9 @@ export function fetchRecipeList(userInput) {
           let dish = json.hits[recipeId];
           let recipeObject = {
             name: dish.recipe.label,
+            image: dish.recipe.image,
+            ingredients: dish.recipe.ingredientLines,
+            url: dish.recipe.url,
             key: uniqueRecipeId
           };
           newRecipes.push(recipeObject);
@@ -30,6 +33,8 @@ export function fetchRecipeList(userInput) {
       } else {
         console.log('No results found.');
       }
+
+      console.log(newRecipes);
     });
   };
 }
