@@ -24,6 +24,7 @@ export function fetchRecipeList(userInput) {
             image: dish.recipe.image,
             ingredients: dish.recipe.ingredientLines,
             url: dish.recipe.url,
+            displayDetail: false,
             key: uniqueRecipeId
           };
           newRecipes.push(recipeObject);

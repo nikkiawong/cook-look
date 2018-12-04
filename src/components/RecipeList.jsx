@@ -6,13 +6,16 @@ const RecipeList = ({ newRecipes }) => {
   return (
     <div>
       {newRecipes.map((recipe) =>
-        <li key={recipe.key}>{recipe.name}
+        <div key={recipe.key}>
+          <h2>{recipe.name}</h2>
+          <img src={recipe.image}></img>
+          <h4>Ingredients</h4>
           <ul>
-            <li><img src={recipe.image}></img></li>
-            <li>{recipe.ingredients}</li>
-            <li>{recipe.url}</li>
+            {recipe.ingredients.map((ingredient, index) =>
+              <li key={index}>{ingredient}</li>)}
           </ul>
-        </li>
+          <p><a href={recipe.url}>Recipe Source</a></p>
+        </div>
       )}
     </div>
   );
