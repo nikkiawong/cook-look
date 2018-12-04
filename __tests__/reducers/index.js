@@ -18,7 +18,17 @@ describe('Cook Look', () => {
       const newStateEntry = {
         isFetching: true
       };
-      expect(searchRecipeReducer(initialState.currentSearchRecipeList[1].isFetching, action)).toEqual(newStateEntry);
+      expect(searchRecipeReducer(initialState.currentSearchRecipeList, action)).toEqual(newStateEntry);
+    });
+
+    it('Should update state when API returns.', () => {
+      const testArray = [{ name: 'Apple Pie' }, { name: 'Apple Cider' }, { name: 'Apple Chips' }];
+      const action = actions.receiveRecipe(testArray);
+      const newStateEntry = {
+        isFetching: false,
+        newRecipes: testArray
+      };
+      expect(searchRecipeReducer(initialState.currentSearchRecipeList, action)).toEqual(newStateEntry);
     });
   });
 
