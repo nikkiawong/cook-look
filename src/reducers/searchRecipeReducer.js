@@ -8,6 +8,12 @@ const searchRecipeReducer = (state = initialState.currentSearchRecipeList[1], ac
       isFetching: true
     });
     return newRecipeSearchSlice;
+  case types.RECEIVE_RECIPE:
+    const receivedRecipeSearchSlice = Object.assign({}, state, {
+      isFetching: false,
+      newRecipes: action.newRecipes
+    });
+    return receivedRecipeSearchSlice;
   default:
     return state;
   }

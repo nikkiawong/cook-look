@@ -15,29 +15,24 @@ export function fetchRecipeList(userInput) {
       error => console.log('An error occurred.', error)
     ).then(function(json) {
       let newRecipes = [];
-      let newRecipes2 = {};
       if (json.hits) {
         Object.keys(json.hits).map(recipeId => {
           let dish = json.hits[recipeId];
           let recipeObject = {
             name: dish.recipe.label
           };
-          newRecipes.push(recipeObject.name);
-          newRecipes2 = Object.assign({}, newRecipes2, recipeObject);
+          newRecipes.push(recipeObject);
         });
-        //OVERWROTE ITSELF 10 TIMES IN A ROW//
-      //   dispatch(receiveSong(title, artist, localSongId, songArray));
+        dispatch(receiveRecipe(newRecipes));
       //   dispatch(changeSong(localSongId));
       } else {
         console.log('No results found.')
       };
-
-
-
-      console.log(newRecipes);
-      console.log(newRecipes2);
-      console.log(json);
-      console.log(json.hits[0].recipe.label);
     });
   };
-}
+};
+
+export const receiveRecipe = (newRecipes) => ({
+  type: types.RECEIVE_RECIPE,
+  newRecipes
+});

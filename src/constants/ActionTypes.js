@@ -1,1 +1,2 @@
 export const SEARCH_RECIPE = 'SEARCH_RECIPE';
+export const RECEIVE_RECIPE = 'RECEIVE_RECIPE';
