@@ -24,7 +24,6 @@ export function fetchRecipeList(userInput) {
           newRecipes.push(recipeObject);
         });
         dispatch(receiveRecipe(newRecipes));
-      //   dispatch(changeSong(localSongId));
       } else {
         console.log('No results found.')
       };

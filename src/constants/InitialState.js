@@ -1,5 +1,8 @@
 export const initialState = {
   currentSearchRecipeList: {
-    isFetching: false
+    isFetching: false,
+    newRecipes: [{
+      name: null
+    }]
   },
 };
