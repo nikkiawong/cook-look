@@ -3,7 +3,7 @@ import { fetchRecipeList } from './../actions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-function Search({ dispatch }) {
+function Search({ dispatch }, props) {
   let input;
   return (
     <div>

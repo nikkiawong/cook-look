@@ -17,21 +17,28 @@ export function fetchRecipeList(userInput) {
       let newRecipes = [];
       if (json.hits) {
         Object.keys(json.hits).map(recipeId => {
+          const uniqueRecipeId = v4();
           let dish = json.hits[recipeId];
           let recipeObject = {
-            name: dish.recipe.label
+            name: dish.recipe.label,
+            key: uniqueRecipeId
           };
           newRecipes.push(recipeObject);
         });
         dispatch(receiveRecipe(newRecipes));
+        dispatch(showRecipes());
       } else {
-        console.log('No results found.')
-      };
+        console.log('No results found.');
+      }
     });
   };
-};
+}
 
 export const receiveRecipe = (newRecipes) => ({
   type: types.RECEIVE_RECIPE,
   newRecipes
+});
+
+export const showRecipes = () => ({
+  type: types.SHOW_RECIPES
 });

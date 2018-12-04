@@ -1,2 +1,3 @@
 export const SEARCH_RECIPE = 'SEARCH_RECIPE';
 export const RECEIVE_RECIPE = 'RECEIVE_RECIPE';
+export const SHOW_RECIPES = 'SHOW_RECIPES';
